@@ -1,13 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Autour+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Strait&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 
+- Mobile: 375px - Desktop: 1440px (My laptop 1920px)
+500px, 600px, 700px, 800px, 1000px
+*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  utline: 1px solid black;
+  outline: 1px solid black;
 }
 :root {
   --dark-blue: hsl(209, 23%, 22%); /* Neutral (Dark Mode Elements) */
@@ -23,7 +26,7 @@
   --color-neutral-600: #2d2d2d;
   --color-neutral-700: #1f1f1f;
   --color-neutral-800: #050505;
-  --color-accent: hsl(274, 82%, 60%);
+  --color-accent: #a445ed;
   --color-error: #ff5252;
-  --color-placeholder: hsl(212, 100%, 48%);
+  --color-placeholder: rgb(255 255 255 0.25);
 }
