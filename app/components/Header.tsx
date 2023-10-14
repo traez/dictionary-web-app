@@ -6,7 +6,7 @@ import { useState, useEffect, useContext } from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import { StateContext } from "../StateProvider";
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 
 export default function Header() {
   const {
@@ -19,9 +19,10 @@ export default function Header() {
     searchTerm,
     setSearchTerm,
     checkKey,
+    pushSearchTerm,
   } = useContext(StateContext)!;
   const { theme, setTheme } = useTheme();
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
     setMounted(true);
@@ -52,7 +53,7 @@ export default function Header() {
             alt=""
             fill
             sizes="(min-width: 400px) 100vw"
-            onClick={() => router.push('/')}
+            onClick={() => router.push("/")}
           />
         </div>
         <menu className="grid grid-cols-[1fr,1fr] grid-rows-[auto] gap-[0.1rem] h-10">
@@ -107,10 +108,13 @@ export default function Header() {
             }}
             onKeyDown={(event: React.KeyboardEvent<HTMLInputElement>) => {
               checkKey(event);
-            }}          
+            }}
           />
           <div className="flex flex-row justify-center items-center">
-            <div className="relative h-8 w-8">
+            <div
+              onClick={pushSearchTerm}
+              className="cursor-pointer hover:border-blue-500 hover:border-[1px] relative h-8 w-8"
+            >
               <Image
                 src="/images/icon-search.png"
                 alt=""

@@ -26,6 +26,7 @@ interface StateContextType {
   setError: React.Dispatch<React.SetStateAction<any>>;
   checkKey: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   fetchSearchData: (term: string) => Promise<void>;
+  pushSearchTerm: () => void;
 }
 
 interface StateProviderProps {
@@ -44,6 +45,12 @@ export default function StateProvider({ children }: StateProviderProps) {
 
   const checkKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
+      router.push(`/${searchTerm}`);
+    }
+  };
+
+  const pushSearchTerm = () => {
+    if (searchTerm) {
       router.push(`/${searchTerm}`);
     }
   };
@@ -92,6 +99,7 @@ export default function StateProvider({ children }: StateProviderProps) {
         setError,
         checkKey,
         fetchSearchData,
+        pushSearchTerm,
       }}
     >
       {children}

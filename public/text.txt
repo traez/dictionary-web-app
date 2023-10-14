@@ -1,3 +1,2 @@
-
-i just finished building out my own version of the project in the below link. What do you think is essence of above code to my entire code base?
-https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL
+help refactor to add a function.
+if searchTerm is true or exists, then router.push(`/${searchTerm}`);
